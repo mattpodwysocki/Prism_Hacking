@@ -16,6 +16,7 @@ namespace PrismShell
             base.ConfigureAggregateCatalog();
 
             AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(PrismHackingBootstrapper).Assembly));
+            AggregateCatalog.Catalogs.Add(new DirectoryCatalog("DirectoryModules"));
         }
 
         protected override DependencyObject CreateShell()
