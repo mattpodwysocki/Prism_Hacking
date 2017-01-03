@@ -33,8 +33,6 @@ namespace PrismShell
 
         public void OnImportsSatisfied()
         {
-            DataContext = _moduleTracker;
-
             _logger.Callback = (message, category, priority) => Debug.WriteLine($"[{category}][{priority}] {message}");
             _logger.ReplayLogs();
 
