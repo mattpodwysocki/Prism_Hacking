@@ -6,7 +6,7 @@ namespace Module1.ViewModels
     [Export(typeof(ViewAViewModel))]
     public class ViewAViewModel : BindableBase
     {
-        private string _moduleName = "Module 1";
+        private string _moduleName = "Module 1 is the first module";
 
         public string ModuleName
         {

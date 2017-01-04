@@ -6,7 +6,7 @@ namespace Module3.ViewModels
     [Export(typeof(ViewCViewModel))]
     public class ViewCViewModel : BindableBase
     {
-        private string _moduleName = "Module 3";
+        private string _moduleName = "Module 3 is the third module";
         public string ModuleName
         {
             get { return _moduleName; }

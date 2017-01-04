@@ -6,22 +6,25 @@
         xmlns:local="clr-namespace:PrismShell"
         xmlns:prism="http://prismlibrary.com/"   
         mc:Ignorable="d"
-        Title="Shell" Height="300" Width="300">
+        Title="Shell" Height="640" Width="480">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="450" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="Region1">
-            
-        </ContentControl>
-        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Region2">
+        <ContentControl Grid.Row="0" Grid.Column="0" prism:RegionManager.RegionName="Region1" />
+        <Button Content="Remove ViewA" Click="ViewARemove" Grid.Row="1" Grid.Column="0" />
 
-        </ContentControl>
-        <ContentControl Grid.Row="2" prism:RegionManager.RegionName="Region3">
+        <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="Region2" />
+        <Button Content="Remove ViewB" Click="ViewBRemove" Grid.Row="1" Grid.Column="1" />
 
-        </ContentControl>
+        <ContentControl Grid.Row="0" Grid.Column="2" prism:RegionManager.RegionName="Region3" />
+        <Button Content="Remove ViewC" Click="ViewCRemove" Grid.Row="1" Grid.Column="2" />
     </Grid>
 </Window>

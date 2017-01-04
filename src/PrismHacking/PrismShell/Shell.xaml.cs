@@ -1,4 +1,5 @@
 ﻿using Prism.Modularity;
+using Prism.Regions;
 using PrismHacking.Common;
 using System;
 using System.ComponentModel.Composition;
@@ -24,6 +25,9 @@ namespace PrismShell
 
         [Import(AllowRecomposition = false)]
         private PrismHackingLogger _logger;
+
+        [Import(AllowRecomposition = false)]
+        private IRegionManager _regionManager;
 #pragma warning restore 0649 
 
         public Shell()
@@ -54,6 +58,21 @@ namespace PrismShell
         private void OnModuleDownloadProgressChanged(EventPattern<ModuleDownloadProgressChangedEventArgs> p)
         {
             _moduleTracker.RecordModuleDownloading(p.EventArgs.ModuleInfo.ModuleName, p.EventArgs.BytesReceived, p.EventArgs.TotalBytesToReceive);
+        }
+
+        private void ViewARemove(object sender, RoutedEventArgs e)
+        {
+            _regionManager.Regions["Region1"].RemoveAllViews();
+        }
+
+        private void ViewBRemove(object sender, RoutedEventArgs e)
+        {
+            _regionManager.Regions["Region2"].RemoveAllViews();
+        }
+
+        private void ViewCRemove(object sender, RoutedEventArgs e)
+        {
+            _regionManager.Regions["Region3"].RemoveAllViews();
         }
     }
 }

@@ -30,7 +30,6 @@ namespace Module1
             _moduleTracker.RecordModuleConstructed(ModuleName);
         }
 
-
         public void Initialize()
         {
             _logger.Log($"{ModuleName} demonstrates logging during Initialize().", Category.Info, Priority.Medium);
